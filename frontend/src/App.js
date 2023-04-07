@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Axios from "axios";
 import React, {useEffect, useState} from 'react';
-
+import Navbar  from './components/Navbar';
 function App() {
   const [data,setData] = useState("");
   
@@ -15,9 +15,11 @@ function App() {
     getData()
   }, []);
   return (
-    <div className="App">
-         {data}
-    </div>
+    <><div className="App">
+      {data}
+    </div><div>
+        <Navbar />
+      </div></>
   );
 }
 
