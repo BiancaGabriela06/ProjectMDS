@@ -1,0 +1,90 @@
+*,*::after, *::before{
+    margin: 1rem;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+}
+
+.btn {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.5rem;
+    cursor: pointer;
+    background-color: transparent;
+    height: 50px;
+    width: 200px;
+    color: black;
+    font-size: 1.5em;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(6, 7, 45)
+}
+ul{
+    display: flex;
+    gap: 5rem;
+}
+
+.site-title{
+    font-size: 5rem;
+    color: white;
+    text-decoration: solid;
+    font-weight: 300;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-sizing: border-box;
+    background: rgb(70, 181, 196);
+}
+
+.options{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.connect{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+@media screen and (max-witdh: 768px){
+    .nav__toggler{
+        display: block;
+    }
+    .nav__menu{
+        position: absolute;
+        top: 7vh;
+        right: 0;
+        width: 50%;
+        height: 93vh;
+        background: rgb(7, 50, 7);
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: 0.5s ease-in;
+    }
+}
+
+.nav li:active{
+    background-color: #555;
+}
+
+.nav li:hover{
+    background-color: #777;
+}
+
+

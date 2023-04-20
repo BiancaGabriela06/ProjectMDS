@@ -1,28 +1,21 @@
 import express from "express";
 import cors from "cors";
-import mysql from 'mysql2'
+import db from "./database.js";
+import authRoutes from "./routes/auth.js";
+import userRoutes from "./routes/users.js";
+import cookieParser from "cookie-parser";
 
 const app = express();
+app.use(express.json());
 app.use(cors());
+app.use(cookieParser());
 
-const mysqlConnection = mysql.createConnection({
-    database: "mdsDB",
-    host: "localhost",
-    user: "root",
-    password: "mysql123"
-})
 
-mysqlConnection.connect((err) => {
-    if(err){
-         console.log('Error in DB connection' + JSON.stringify(err,undefined,2) );
-    }
-    else{
-         console.log('DB Connected successfully' )
-    }
-})
+app.use("/auth", authRoutes);
+app.use("/users", userRoutes);
 
 app.get("/getData", (req, res) => {
     res.send("Hello");
 })
-app.listen(5000, () => 
+app.listen(3001, () => 
     console.log("App is listening"));
