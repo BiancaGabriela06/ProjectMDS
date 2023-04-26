@@ -40,7 +40,7 @@ function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/welcome" element={<Welcome />} />
       <Route path="/profile" element={<Profile />} />
-
+      
     </Routes>
     <Footer />
     </>

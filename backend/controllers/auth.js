@@ -11,8 +11,9 @@ export const register = (req, res) => {
             return res.json(err)
         }
         if(data.length) {
-            return res.status(409).json("User already exists!");
+            return res.json({Status: "Error",  Error: "User already exists!"});
         }
+    
 
      /// hash the password and create the user
      const salt = bycript.genSaltSync(10);

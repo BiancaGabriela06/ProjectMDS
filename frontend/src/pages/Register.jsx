@@ -17,23 +17,29 @@ const Register = () => {
         setInputs((prev) => ({...prev, [e.target.name]: e.target.value}));
 
     }
+    const [error, setError] = useState("");
 
-    const handleSubmit = () => {
-      try{
-        axios.post("http://localhost:3001/auth/register", inputs);
-        navigate("/login");
-      }catch(err){
-        console.log(err)
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        axios.post("http://localhost:3001/auth/register", inputs)
+        .then(res => {
+            if(res.data.Status === 'Error' && res.data.Error === 'User already exists!')
+                setError(res.data.Error);
+            else
+                navigate("/login");
+               
+        });
+        
     }
-  };
-
 
     return (
         <div className="auth">
             <h2>REGISTRATION</h2>
         
         <form action="#!" id="main">
-            
+        <div className='error'>
+            {error && error}
+        </div>
             <div className="input-parent">
             <label >Username</label>
             <input required type="text" placeholder="Enter username" id="username" name="username" 
