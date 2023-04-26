@@ -1,0 +1,45 @@
+.background{
+    height: 100vh;
+    background-image: url('../images/back1.jpg');
+    background-size: cover;
+    margin-top: 10vh;
+}
+
+.question{
+    width: max-content;
+    font-family: "Segoe UI", sans-serif;
+    padding: 25px 28px;
+    margin-left: 20vh;
+    font-size: 5vh;
+    margin-top: 5vh;
+    border-radius: 4px;
+    animation: popup 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    color: black;
+    text-decoration: double;
+    font: optional;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 30px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none;
+    font-style: italic;
+    font-variant: small-caps;
+    text-transform: none;
+
+}
+
+.click{
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0.5cm blue;
+    
+    
+}
+
+.h2{
+    color: black;
+}
+
+

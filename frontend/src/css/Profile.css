@@ -1,0 +1,41 @@
+.profile{
+    position: absolute;
+    display: flex;
+    text-align: justify;
+    box-shadow: 0 1px 20p 0 blanchedalmond;
+    margin-left: 10rem;
+    margin-top: 10rem;
+    margin-right: 10rem;
+    
+}
+
+input {
+    
+    font-size: 2rem;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    background-color: #eee;
+  }
+
+.title{
+    width: 35%;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 3rem;
+    font-weight: bolder;
+    margin-right: 5%;
+}
+
+.informations{
+       width: 65%;
+}
+  
+.container{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.edit{
+    font-size: 2rem;
+    margin-bottom: 8rem;
+}
