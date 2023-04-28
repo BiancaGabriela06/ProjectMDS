@@ -1,10 +1,10 @@
 import mysql from "mysql2";
 
 const db = mysql.createConnection({
-  database: "mds", // aici
+  database: "mdsdb", // aici
   host: "localhost",
   user: "root",
-  password: "alex123", // si aici modifica fiecare la baza lui de date
+  password: "dulumanandrada", // si aici modifica fiecare la baza lui de date
 });
 
 db.connect((err) => {
