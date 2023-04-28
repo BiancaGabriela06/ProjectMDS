@@ -11,6 +11,8 @@ function ArticlesGrid({ articles }) {
           author={article.author}
           date={article.date}
           content={article.content.slice(0, 250) + "..."}
+          page={article.page}
+          image={article.image}
         />
       ))}
     </div>

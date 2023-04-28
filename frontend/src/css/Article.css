@@ -5,6 +5,7 @@ article {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   margin: 5px 5px 20px 5px;
   padding: 20px;
+  position: relative;
 }
 
 h2 {
@@ -45,4 +46,17 @@ div {
   font-size: 1.6rem;
   line-height: 1.5;
   color: #555;
+}
+
+img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+}
+
+.space {
+  margin-bottom: 35px;
 }
