@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Article({ title, author, date, content, page, image }) {
   return (
-    <article> 
+    <article>
       <h2>
         <Link
           to={page}

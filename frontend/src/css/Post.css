@@ -1,0 +1,23 @@
+.post-container {
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px 50px;
+}
+
+.post-name {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.post-text {
+  line-height: 1.5;
+  color: #666;
+  font-size: 17px;
+  white-space: pre-line;
+}
+
+.post-content {
+  margin-left: 15px;
+}

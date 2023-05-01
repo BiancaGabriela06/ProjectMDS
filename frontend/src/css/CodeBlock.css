@@ -1,0 +1,50 @@
+pre[class*="language-"] {
+  background-color: #282c34;
+  color: #abb2bf;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 16px;
+  overflow: auto;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  tab-size: 2;
+}
+
+.language-javascript {
+  color: #abb2bf;
+}
+.language-jsx {
+  color: #61dafb;
+}
+.language-html {
+  color: #d4d4d4;
+}
+.language-css {
+  color: #d4d4d4;
+}
+pre[class*="language-"]::before {
+  right: 2000em;
+  left: auto;
+  transform: rotate(2deg);
+}
+
+pre[class*="language-"]::after {
+  right: 2000em;
+  left: auto;
+  transform: rotate(2deg);
+}
+
+.code-output {
+  white-space: pre-line;
+  background-color: #282c34;
+  color: #fff;
+  font-family: monospace;
+  padding: 10px;
+  padding-left: 30px;
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 10px;
+}

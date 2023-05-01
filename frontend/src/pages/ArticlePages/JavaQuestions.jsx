@@ -1,4 +1,7 @@
 import React from "react";
+import ArticleHeader from "../../components/ArticleHeader";
+import Post from "../../components/Post";
+import "../../css/AQuestion.css";
 
 function JavaQuestions() {
   const questions = [
@@ -127,24 +130,25 @@ function JavaQuestions() {
   ];
 
   return (
-    <div>
-      <p>
-        This is an article aimed at preparing Java developers for their upcoming
-        interviews. The article covers the most commonly asked Java interview
-        questions and provides detailed explanations for each question, along
-        with sample code and best practices. From core Java concepts to advanced
-        topics like multi-threading, exception handling, and design patterns,
-        this guide covers all the essential aspects of Java development that
-        interviewers typically test candidates on. Whether you're a beginner or
-        an experienced Java developer, this guide will help you gain confidence
-        and land your dream job.
-      </p>
-      {questions.map((question) => (
-        <div key={question.id}>
-          <p>{question.question}</p>
-          <p> {question.answer}</p>
-        </div>
-      ))}
+    <div style={{ marginBottom: "70px" }}>
+      <ArticleHeader
+        title="Top 20 Java Interview Questions and Answers"
+        subtitle="If you're looking to brush up on your Java skills before an interview, these 20 commonly asked interview questions and answers may help you prepare."
+      ></ArticleHeader>
+      <Post
+        title="Bianca Asavoaei"
+        content="This is an article aimed at preparing Java developers for their upcoming interviews. The article covers the most commonly asked Java interview questions and provides detailed explanations for each question, along with sample code and best practices. From core Java concepts to advanced topics like multi-threading, exception handling, and design patterns, this guide covers all the essential aspects of Java development that interviewers typically test candidates on. Whether you're a beginner or an experienced Java developer, this guide will help you gain confidence and land your dream job."
+      ></Post>
+      <div className="question-wrapper">
+        {questions.map((question) => (
+          <Post
+            key={question.id}
+            title={question.id + ". " + question.question}
+            content={question.answer}
+            notSpaced={true}
+          />
+        ))}
+      </div>
     </div>
   );
 }

@@ -99,7 +99,7 @@ const TipsTricks = () => {
     },
     {
       id: 10,
-      title: "Java collections tutorial",
+      title: "Java Collections: A Comprehensive Guide",
       author: "Andrada Duluman",
       date: "April 18, 2023",
       content:
