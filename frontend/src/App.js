@@ -12,6 +12,8 @@ import Register from './pages/Register';
 import Welcome from './pages/Welcome';
 import {Routes, Route} from "react-router-dom";
 import Profile from './pages/Profile';
+import Question from './components/Forum/Question';
+import Try from './components/Forum/Try';
 
 function App() {
   
@@ -26,7 +28,8 @@ function App() {
     getData()
   }, []);*/
   return (
-    <><div className="App">
+    <>
+    <div className="App">
       {data}
     </div>
     <Navbar />
@@ -40,6 +43,8 @@ function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/welcome" element={<Welcome />} />
       <Route path="/profile" element={<Profile />} />
+
+      <Route path="/forum/question/:id" element={<Question />} />
 
     </Routes>
     <Footer />

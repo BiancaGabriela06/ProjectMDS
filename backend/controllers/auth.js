@@ -31,7 +31,7 @@ export const register = (req, res) => {
         else {
             console.log("User has been created")
             return res.status(200).json("User has been created");
-
+            
         }
         
      })
