@@ -1,0 +1,9 @@
+.question-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.question-wrapper h1 {
+  color: rgb(14, 59, 136);
+}

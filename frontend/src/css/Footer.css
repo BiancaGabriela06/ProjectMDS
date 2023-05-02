@@ -1,9 +1,10 @@
-footer{
+footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color:  rgb(213, 219, 220);
+  background-color: rgb(213, 219, 220);
   color: rgb(255, 255, 255);
   font-size: 3rem;
   text-align: center;
+  z-index: 1;
 }
