@@ -18,10 +18,10 @@ const Navbar = () => {
         auth ?
         <nav className="nav">
                   
-            <Link to = "/welcome" className="site-title"> BoostByte</Link>
+            <Link to = "/welcome" className="site-title"> ByteBoost</Link>
             <div className="options">
              <ul>
-                <CustomLink to ="/questions">Interview Questions</CustomLink>     
+                <CustomLink to ="/quizlist">Interview Questions</CustomLink>     
                 <CustomLink to ="/tipstricks">Tips and Tricks</CustomLink>   
                 <CustomLink to ="/forum">Forum </CustomLink>    
             </ul>

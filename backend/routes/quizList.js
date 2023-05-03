@@ -1,8 +1,7 @@
 import express from "express";
-import { profile } from "../controllers/users.js";
+import quizList from "../controllers/quizList.js";
 
 const router = express.Router();
 
-router.post("/profile", profile);
-
+router.get("/", quizList);
 export default router;
