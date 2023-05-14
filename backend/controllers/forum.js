@@ -50,3 +50,42 @@ export const viewforum = (req, res) => {
     }
     );
 }
+
+export const viewforumanswers = (req, res) => {
+    const query = "SELECT * from forum_answers"
+    console.log("Ajunge aici macar la forum");
+    console.log(req.body);
+    db.query(query, (err, data) => {
+        console.log("Se intampla ceva aici? la forum");
+        console.log(data);
+        if(err) {
+            console.log("eroare? forum");
+            return res.json(err);
+        }
+        if(data.length != 0) {
+            console.log("Aici??? forum")
+            console.log(data);
+            return res.json(data);
+        }
+        console.log("trece de tot? forum");
+    }
+    );
+}
+
+export const newanswer = (req, res) => {
+     const query = "INSERT INTO forum_answers (id_question, content) VALUES (?,?)"
+     console.log(req.body.id_question, req.body.content)
+
+     db.query(query, [req.body.id_question, req.body.content], (err, data) => {
+        if(err) {
+            console.log("intra aici :)");
+            console.log(err);
+            return res.json(err);
+        }
+        else {
+            console.log("Answer has been created")
+            return res.status(200).json("Answer has been created");
+        }
+        
+     })
+};

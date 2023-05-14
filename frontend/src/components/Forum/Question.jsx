@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import EmptyList from '../EmptyList';
 import axios from 'axios';
+import QuestionAnswers from './QuestionAnswers';
 
 const Question = () => {
   // const { id } = useParams();
@@ -42,6 +43,7 @@ const Question = () => {
           <div>
             <h1 style={{textAlign:"center", marginTop:"5rem"}}>{q.title}</h1>
             <div style={{padding:"5rem", fontFamily:"sans-serif", fontSize:"20px"}}>{q.content}</div>
+            <QuestionAnswers qId={q.id}/>
           </div>
           ) : (<EmptyList />)
         }
