@@ -7,11 +7,14 @@ const Quiz = (props) => {
   const [selectedOption, setSelectedOption] = useState('');
   const [timeLeft, setTimeLeft] = useState(60);
 
+  console.log(selectedOption);
+
   useEffect(() => {
-    axios.get(`http://localhost:3001/quiz/"{props.match.params.id}"`)
+    axios.get('http://localhost:3001/quiz/${params.match}')
       .then(res => {
-        console.log('Response data:', res.data);
-        setQuestions(res.data);
+        console.log("im here")
+        console.log('Response data:', res.data.questions);
+        setQuestions(res.data.questions);
       })
       .catch(err => {
         console.log('Error fetching quiz data:', err);
@@ -41,8 +44,8 @@ const Quiz = (props) => {
   };
 
   const handleSubmitClick = () => {
-    const answer = questions[currentQuestion].options.find(option => option.value === selectedOption);
-    if (answer.isCorrect) {
+    const answer = questions[currentQuestion].answer;
+    if (selectedOption === answer) {
       alert('Correct answer!');
     } else {
       alert('Incorrect answer!');
@@ -66,16 +69,19 @@ const Quiz = (props) => {
     );
   }
 
+  const question = questions[currentQuestion];
+  const options = [question.option1, question.option2, question.option3, question.option4];
+
   return (
     <div>
       <h2>Question {currentQuestion + 1}</h2>
-      <p>{questions[currentQuestion].question}</p>
+      <p>{question.question}</p>
       <div>
-        {questions[currentQuestion].options.map((option) => (
-          <div key={option.value}>
+        {options.map((option, index) => (
+          <div key={index}>
             <label>
-              <input type="radio" value={option.value} checked={selectedOption === option.value} onChange={handleOptionChange} />
-              {option.text}
+              <input type="radio" value={option} checked={selectedOption === option} onChange={handleOptionChange} />
+              {option}
             </label>
           </div>
         ))}

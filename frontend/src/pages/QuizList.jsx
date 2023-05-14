@@ -17,18 +17,19 @@ const QuizList = () => {
       });
   }, []);
 
-  console.log('Quizzes array:', quizzes);
-
   return (
+    <div>
     <div className="quiz-list">
       <h2>List of Quizzes</h2>
+</div>
+    <div className="quiz-box">
       {quizzes.map((quiz) => (
         <div key={quiz.id} className="quiz-card">
           <div className="quiz-title">{quiz.title}</div>
           <div className="quiz-description">{quiz.description}</div>
           <Link to={`/quiz/${quiz.id}`} className="quiz-link">Start Quiz</Link>
         </div>
-      ))}
+      ))}</div>
     </div>
   )
 }
