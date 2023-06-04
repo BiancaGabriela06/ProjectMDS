@@ -2,6 +2,12 @@ import React from "react";
 import ArticleHeader from "../../components/ArticleHeader";
 import Post from "../../components/Post";
 
+/**
+ * this article is about numpy and all of it's
+ * main functionality, documentation, and many many
+ * code examples
+ */
+
 function NpGuide() {
   return (
     <div style={{ marginBottom: "70px" }}>

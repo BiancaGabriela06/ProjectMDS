@@ -2,6 +2,11 @@ import React from "react";
 import ArticleHeader from "../../components/ArticleHeader";
 import Post from "../../components/Post";
 
+/**
+ * in this article are some notions about threading
+ * and how to implement it in java with code examples
+ */
+
 function JavaThreads() {
   return (
     <div style={{ marginBottom: "70px" }}>

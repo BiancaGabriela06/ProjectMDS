@@ -2,6 +2,12 @@ import React from "react";
 import ArticleHeader from "../../components/ArticleHeader";
 import Post from "../../components/Post";
 
+/**
+ * this article is about a comparison with javascript 
+ * regular functions vs arrow functions and here are
+ * some exemple in which they differ
+ */
+
 function JsFunctions() {
   return (
     <div style={{ marginBottom: "70px" }}>

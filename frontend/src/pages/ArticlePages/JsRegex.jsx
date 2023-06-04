@@ -2,6 +2,12 @@ import React from "react";
 import ArticleHeader from "../../components/ArticleHeader";
 import Post from "../../components/Post";
 
+/**
+ * this article is about regexes in js 
+ * and we talk about what is a regex, usecases
+ * and how to utilize it in javascript
+ */
+
 function JsRegex() {
   return (
     <div style={{ marginBottom: "70px" }}>

@@ -2,6 +2,12 @@ import React from "react";
 import ArticleHeader from "../../components/ArticleHeader";
 import Post from "../../components/Post";
 
+/**
+ * this page is an article for java collections
+ * there are more data structures covered, each with
+ * it's dedicated block and code example
+ */
+
 function JavaCollections() {
   return (
     <div style={{ marginBottom: "70px" }}>

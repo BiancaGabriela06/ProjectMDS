@@ -2,6 +2,11 @@ import React from "react";
 import ArticleHeader from "../../components/ArticleHeader";
 import Post from "../../components/Post";
 
+/**
+ * this is an article about js promises and
+ * asynchronous programing
+ */
+
 function JsPromise() {
   return (
     <div style={{ marginBottom: "70px" }}>

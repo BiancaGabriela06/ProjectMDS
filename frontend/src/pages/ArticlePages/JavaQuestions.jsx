@@ -3,6 +3,11 @@ import ArticleHeader from "../../components/ArticleHeader";
 import Post from "../../components/Post";
 import "../../css/AQuestion.css";
 
+/**
+ * here are just some java interview questions with answers
+ * all separated with a block
+ */
+
 function JavaQuestions() {
   const questions = [
     {

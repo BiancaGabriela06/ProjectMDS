@@ -2,6 +2,12 @@ import React from "react";
 import ArticleHeader from "../../components/ArticleHeader";
 import Post from "../../components/Post";
 
+/**
+ * this page is an article about lambda functions in java
+ * it has a title, some blocks about functinal programing 
+ * and code examples on how to do it in java
+ */
+
 function JavaLambda() {
   return (
     <div style={{ marginBottom: "70px" }}>

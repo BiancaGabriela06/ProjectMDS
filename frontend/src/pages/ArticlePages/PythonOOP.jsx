@@ -2,6 +2,12 @@ import React from "react";
 import ArticleHeader from "../../components/ArticleHeader";
 import Post from "../../components/Post";
 
+/**
+ * here we have an article about Object Oriented Programing
+ * in Python and we cover basic classes and object creations
+ * and some other usefull stuff specific to python
+ */
+
 function PythonOOP() {
   return (
     <div style={{ marginBottom: "70px" }}>

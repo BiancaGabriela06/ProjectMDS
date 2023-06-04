@@ -2,6 +2,11 @@ import React from "react";
 import ArticleHeader from "../../components/ArticleHeader";
 import Post from "../../components/Post";
 
+/**
+ * this page is an article for python decorators
+ * it has a title, some article blocks and code blocks
+ */
+
 function Decorators() {
   return (
     <div style={{ marginBottom: "70px" }}>

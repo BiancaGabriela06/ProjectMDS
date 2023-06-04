@@ -2,6 +2,13 @@ import React from "react";
 import ArticleHeader from "../../components/ArticleHeader";
 import Post from "../../components/Post";
 
+/**
+ * in this article we covered how to start using pygame
+ * and how to do basic stuff in it, like drawing rectangles
+ * updating stuff on the screen and showing the flow of 
+ * builing a game
+ */
+
 function PythonGame() {
   return (
     <div style={{ marginBottom: "70px" }}>
