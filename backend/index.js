@@ -17,5 +17,6 @@ app.use("/users", userRoutes);
 app.get("/getData", (req, res) => {
     res.send("Hello");
 })
+
 app.listen(3001, () => 
     console.log("App is listening"));

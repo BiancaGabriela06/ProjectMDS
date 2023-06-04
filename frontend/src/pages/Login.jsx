@@ -5,13 +5,14 @@ import { Link, useNavigate } from "react-router-dom";
 const Login = () => {
     
     const navigate = useNavigate();
-
+    
+    ///values to give to axios.post
     const [values, setValues] = useState({
         username: "",
         password: "",
     });
 
-    
+    ///error given by backend
     const [error, setError] = useState("");
     
     const handleSubmit = (event) => {

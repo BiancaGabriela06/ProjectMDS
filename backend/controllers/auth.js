@@ -1,23 +1,29 @@
 import db from "../database.js";
 import bycript from "bcrypt";
-import jwt from "jsonwebtoken";
 
 export const register = (req, res) => {
-     //Check existing user
      
-     const query = "SELECT * from users where email = ? or username =?"
-     db.query(query, [req.body.email, req.body.username], (err, data) => {
-        if(err) {
-            return res.json(err)
-        }
-        if(data.length) {
-            return res.json({Status: "Error",  Error: "User already exists!"});
-        }
-    
+    //Check existing user
+     
+    const query = "SELECT * from users where email = ? or username =?"
+    db.query(query, [req.body.email, req.body.username], (err, data) => {
+       if(err) {
+           return res.json(err)
+       }
+       if(data.length) {
+           return res.json({Status: "Error",  Error: "User already exists!"});
+       }
 
      /// hash the password and create the user
      const salt = bycript.genSaltSync(10);
      const hash = bycript.hashSync(req.body.password, salt);
+     if(req.body.password.length < 6)
+         return res.json({Status: "Error", Error: "Password must have minimum 6 characters!"});
+    
+     /// verify if the req.body.email is an email
+     const regex = /@yahoo\.com|@gmail\.com/;
+     if(regex.test(req.body.email) == 0)
+         return res.json({Status: "Error", Error: "Introduce a valid mail"});
 
      /// if user doesn't exist insert user
      const query = "INSERT INTO users (username, email, password) VALUES (?,?,?)"
@@ -25,7 +31,6 @@ export const register = (req, res) => {
 
      db.query(query, [req.body.username, req.body.email, hash], (err, data) => {
         if(err) {
-            console.log("Aici intra :)");
             console.log(err);
             return res.json(err);
         }
@@ -36,7 +41,7 @@ export const register = (req, res) => {
         }
         
      })
-     });
+    });
 }
 
 export const login = (req, res) => {
@@ -55,6 +60,7 @@ export const login = (req, res) => {
             return res.json({Status: "Error",  Error: "Wrong username"});
         }
         
+        /// get crypted password
         const isPasswordCorrect = bycript.compareSync(
             req.body.password, 
             data[0].password
@@ -65,17 +71,12 @@ export const login = (req, res) => {
             {   
                 return res.json({Status: "Success"})
         }
-        console.log(req.body.username)
-        const token = jwt.sign({id:data[0].id}, "jwkey");
-        const {password, ...other} = data[0];
-
-        res.cookie("access_token", token, {
-            httpOnly: true
-        }).status(200).json(other)
+        
      
      });
 }
 
+/// handle logout clearing cookie
 export const logout = (req, res) => {
     res.clearCookie("access_token", {
         sameSite: "none",
