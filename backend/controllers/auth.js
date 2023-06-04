@@ -25,9 +25,10 @@ export const register = (req, res) => {
      if(regex.test(req.body.email) == 0)
          return res.json({Status: "Error", Error: "Introduce a valid mail"});
 
-     /// if user doesn't exist insert user
-     const query = "INSERT INTO users (username, email, password) VALUES (?,?,?)"
-     console.log(req.body.username, req.body.email, hash)
+    /// if user doesn't exist insert user
+    const query =
+      "INSERT INTO users (username, email, password) VALUES (?,?,?)";
+    console.log(req.body.username, req.body.email, hash);
 
      db.query(query, [req.body.username, req.body.email, hash], (err, data) => {
         if(err) {
@@ -45,8 +46,7 @@ export const register = (req, res) => {
 }
 
 export const login = (req, res) => {
-
-    ///CHECK USER
+  ///CHECK USER
 
     const query = "SELECT * from users where username = ?"
      db.query(query, [req.body.username], (err, data) => {
@@ -78,8 +78,11 @@ export const login = (req, res) => {
 
 /// handle logout clearing cookie
 export const logout = (req, res) => {
-    res.clearCookie("access_token", {
-        sameSite: "none",
-        secure: true
-    }).status(200).json("User has been logged out.")
+  res
+    .clearCookie("access_token", {
+      sameSite: "none",
+      secure: true,
+    })
+    .status(200)
+    .json("User has been logged out.");
 };

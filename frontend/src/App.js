@@ -1,10 +1,8 @@
 import "./App.css";
-import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import Questions from "./pages/Questions";
 import TipsTricks from "./pages/TipsTricks";
 import Forum from "./pages/Forum";
 import Login from "./pages/Login";
@@ -23,6 +21,8 @@ import JsPromise from "./pages/ArticlePages/JsPromise";
 import JsRegex from "./pages/ArticlePages/JsRegex";
 import PythonGame from "./pages/ArticlePages/PythonGame";
 import PythonOOP from "./pages/ArticlePages/PythonOOP";
+import Quiz from "./pages/Quiz";
+import QuizList from "./pages/QuizList";
 
 function App() {
   const [data, setData] = useState("");
@@ -34,7 +34,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/questions" element={<Questions />} />
+        <Route path="/quiz/:id" element={<Quiz />} />
+        <Route path="/quizList" element={<QuizList />} />
         <Route path="/tipstricks" element={<TipsTricks />} />
         <Route path="/forum" element={<Forum />} />
         <Route path="/login" element={<Login />} />
