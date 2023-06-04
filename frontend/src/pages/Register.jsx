@@ -13,6 +13,7 @@ const Register = () => {
         password: "",
     });
     
+    /// const which set values for inputs
     const handleChange = (e) => {
         setInputs((prev) => ({...prev, [e.target.name]: e.target.value}));
 
@@ -23,7 +24,7 @@ const Register = () => {
         event.preventDefault();
         axios.post("http://localhost:3001/auth/register", inputs)
         .then(res => {
-            if(res.data.Status === 'Error' && res.data.Error === 'User already exists!')
+            if(res.data.Status === 'Error')
                 setError(res.data.Error);
             else
                 navigate("/login");
@@ -59,8 +60,9 @@ const Register = () => {
             onChange = {handleChange} />
              </div>
             <button onClick = {handleSubmit}>Register</button>
-            <span className="gotoregister">Do you have an account? <Link to ="/login">Login</Link></span>
-            
+            <div className="gotoregister">
+               <span  style={{ color: 'white' }}>Do you have an account? <Link to ="/login"  style={{ color: 'white' }}>Login</Link></span>
+            </div>
             
         </form>
         </div>

@@ -18,7 +18,7 @@ const Navbar = () => {
         auth ?
         <nav className="nav">
                   
-            <Link to = "/welcome" className="site-title"> BoostByte</Link>
+            <Link to = "/welcome" className="site-title"> ByteBoost</Link>
             <div className="options">
              <ul>
                 <CustomLink to ="/questions">Interview Questions</CustomLink>     
@@ -29,16 +29,21 @@ const Navbar = () => {
 
             <div className="connect">
                 <ul>
-                <CustomLink to ="/profile">Profile</CustomLink>
+                <CustomLink to ="/profile">Edit Profile</CustomLink>
                 </ul>
+
+                <ul>
+                <button onClick = {logout} className='btn'>Logout </button>
+                </ul>
+
             </div>
-            <button onClick = {logout} className='btn'>Logout </button>
+            
                    
         </nav>
         :
         <div>
                 <nav className="nav">
-                  <Link to = "/home" className="site-title"> BoostByte</Link>
+                  <Link to = "/home" className="site-title"> ByteBoost</Link>
               </nav>
     
         </div>
