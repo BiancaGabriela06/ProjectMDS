@@ -3,6 +3,17 @@ import bycript from "bcrypt";
 
 export const register = (req, res) => {
      
+    //Check existing user
+     
+    const query = "SELECT * from users where email = ? or username =?"
+    db.query(query, [req.body.email, req.body.username], (err, data) => {
+       if(err) {
+           return res.json(err)
+       }
+       if(data.length) {
+           return res.json({Status: "Error",  Error: "User already exists!"});
+       }
+
      /// hash the password and create the user
      const salt = bycript.genSaltSync(10);
      const hash = bycript.hashSync(req.body.password, salt);
@@ -29,7 +40,8 @@ export const register = (req, res) => {
 
         }
         
-     });
+     })
+    });
 }
 
 export const login = (req, res) => {
