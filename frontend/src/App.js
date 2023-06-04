@@ -1,5 +1,4 @@
 import './App.css';
-import Axios from "axios";
 import React, {useEffect, useState} from 'react';
 import Navbar  from './components/Navbar';
 import Footer from './components/Footer';
@@ -13,20 +12,11 @@ import Welcome from './pages/Welcome';
 import {Routes, Route} from "react-router-dom";
 import Profile from './pages/Profile';
 import Question from './components/Forum/Question';
-import Try from './components/Forum/Try';
 
 function App() {
   
   const [data,setData] = useState("");
   
-  /*const getData = async() => {
-    const response = await Axios.get("http://localhost:5000/getData");
-    setData(response.data);
-  }
-    
-  useEffect(() => {
-    getData()
-  }, []);*/
   return (
     <>
     <div className="App">

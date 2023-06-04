@@ -3,16 +3,19 @@ import axios from "axios";
 import {Link, useNavigate} from "react-router-dom";
 
 const NewPost = () => {
+    const currentUser = JSON.parse( localStorage.getItem("currentUser"))
     const navigate = useNavigate();
     const [inputs, setInputs] = useState({
         title: "",
         content: "",
+        username: currentUser,
     });
 
     const handleChange = (e) => {
         setInputs((prev) => ({...prev, [e.target.name]: e.target.value}));
     }
 
+    // add the new question in database
     const handleSubmit = () => {
         try{
             axios.post("http://localhost:3001/forum/newpost", inputs);
@@ -25,8 +28,9 @@ const NewPost = () => {
     return (
         <div>
             <div className="card post-body">
-                <div className="card-body" style={{backgroundColor: '#ddd'}}>
+                <div className="card-body" style={{backgroundColor: '#2f3a56', color: "#ddd"}}>
                     <strong>Hello, leave your question here!</strong>
+                    <h1>{currentUser}</h1>
                 </div>
             </div>
             <form>
@@ -37,7 +41,6 @@ const NewPost = () => {
                         
                         <label>Question</label>
                         <input required type="text" id="content" name="content" className="form-control post-editor-input" onChange = {handleChange}/>
-                        {/* <textarea className="form-control post-editor-input" /> */}
                         <button onClick={handleSubmit} className="btn btn-success post-editor-button">Post</button>
                     </div>
                 </div>

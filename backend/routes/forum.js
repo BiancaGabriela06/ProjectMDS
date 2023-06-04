@@ -3,6 +3,7 @@ import {newpost, newanswer, viewforum, viewforumanswers} from "../controllers/fo
 
 const router = express.Router()
 
+// these are the routes:
 router.post('/newpost', newpost)
 router.post('/newanswer', newanswer)
 router.get('/viewforum', viewforum)
