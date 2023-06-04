@@ -20,7 +20,7 @@ const Navbar = () => {
       </Link>
       <div className="options">
         <ul>
-          <CustomLink to="/questions">Interview Questions</CustomLink>
+          <CustomLink to="/quizList">Interview Questions</CustomLink>
           <CustomLink to="/tipstricks">Tips and Tricks</CustomLink>
           <CustomLink to="/forum">Forum </CustomLink>
         </ul>

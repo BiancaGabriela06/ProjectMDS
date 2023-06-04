@@ -1,0 +1,39 @@
+[
+    {
+      "id": 1,
+      "title": "Quiz 1",
+      "questions": [
+        {
+          "id": 1,
+          "question": "What is 2+2?",
+          "choices": ["2", "3", "4", "5"],
+          "answer": "4"
+        },
+        {
+          "id": 2,
+          "question": "What is the capital of France?",
+          "choices": ["London", "Paris", "Berlin", "Madrid"],
+          "answer": "Paris"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Quiz 2",
+      "questions": [
+        {
+          "id": 1,
+          "question": "What is the largest planet in our solar system?",
+          "choices": ["Jupiter", "Saturn", "Mars", "Earth"],
+          "answer": "Jupiter"
+        },
+        {
+          "id": 2,
+          "question": "What is the smallest country in the world?",
+          "choices": ["USA", "Russia", "Vatican City", "China"],
+          "answer": "Vatican City"
+        }
+      ]
+    }
+  ]
+  
