@@ -13,12 +13,14 @@ body{
 
 .btn {
     text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.5rem;
     cursor: pointer;
     background-color: transparent;
     height: 50px;
     width: 200px;
     color: black;
-    font-size: 1.5em;
+    font-size: 1.49rem;
 }
 
 li{
@@ -29,14 +31,16 @@ a{
     text-decoration: none;
     color: rgb(6, 7, 45)
 }
-
+ul{
+    display: flex;
+    gap: 5rem;
+}
 
 .site-title{
     font-size: 5rem;
     color: white;
     text-decoration: solid;
     font-weight: 300;
-    font-weight: bold;
 }
 
 .nav{
@@ -58,52 +62,7 @@ a{
     display: flex;
     align-items: center;
     justify-content: space-around;
-   
 }
-
-ul{
-    
-    display: flex;
-    gap: 5rem;
-}
-
-.connect {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-  }
-  
-  .connect ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-  }
-  
-  .connect ul li {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  .connect a,
-  .connect button {
-    text-decoration: none;
-    color: #000;
-    font-size: 15px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0;
-    font-family: inherit;
-  }
-  
-  .connect a:hover {
-    text-decoration: underline;
-  }
-
-  .connect button{
-    font-weight: bold;
-  }
 
 
 @media screen and (max-witdh: 768px){
@@ -130,5 +89,3 @@ ul{
 .nav li:hover{
     background-color: #777;
 }
-
-
