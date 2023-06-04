@@ -23,6 +23,7 @@ import PythonGame from "./pages/ArticlePages/PythonGame";
 import PythonOOP from "./pages/ArticlePages/PythonOOP";
 import Quiz from "./pages/Quiz";
 import QuizList from "./pages/QuizList";
+import Question from "./components/Forum/Question"
 
 function App() {
   const [data, setData] = useState("");
@@ -64,6 +65,8 @@ function App() {
         <Route path="/ArticlePages/JsRegex" element={<JsRegex />} />
         <Route path="/ArticlePages/PythonGame" element={<PythonGame />} />
         <Route path="/ArticlePages/PythonOOP" element={<PythonOOP />} />
+
+        <Route path="/forum/question/:id" element={<Question />} />
       </Routes>
       <Footer />
     </>

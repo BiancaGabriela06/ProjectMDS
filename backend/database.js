@@ -4,7 +4,7 @@ const db = mysql.createConnection({
   database: "mdsdb", // aici
   host: "localhost",
   user: "root",
-  password: "Sn2002oopy1!",
+  password: "dulumanandrada", // si aici modifica fiecare la baza lui de date
 });
 
 db.connect((err) => {
