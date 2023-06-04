@@ -3,6 +3,7 @@ import db from "../database.js";
 export const quiz = (req, res) => {
   const quizId = req.params.id;
 
+  // query the database to fetch the quiz with the given ID
   const quizQuery = "SELECT * FROM quizzes WHERE id = ?";
   db.query(quizQuery, [quizId], (quizError, quizResults) => {
     if (quizError) {
@@ -11,6 +12,7 @@ export const quiz = (req, res) => {
       return;
     }
 
+    // if no quiz is found with the given ID, return a 404 response
     if (quizResults.length === 0) {
       res.status(404).send("Quiz not found");
       return;
@@ -18,6 +20,7 @@ export const quiz = (req, res) => {
 
     const quiz = quizResults[0];
 
+    // query the database to fetch the questions for the quiz
     const questionsQuery = "SELECT * FROM questions WHERE quiz_id = ?";
     db.query(questionsQuery, [quizId], (questionsError, questionsResults) => {
       if (questionsError) {
@@ -28,6 +31,7 @@ export const quiz = (req, res) => {
 
       const questions = questionsResults;
 
+      // return the quiz and questions as a JSON response
       res.json({ quiz, questions });
     });
   });

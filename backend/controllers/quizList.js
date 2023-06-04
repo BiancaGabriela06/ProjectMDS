@@ -1,66 +1,17 @@
-/*
-import db from "../database.js";
-
-const quizList = {
-  async getQuizzes(req, res) {
-    try {
-      const quizzes = await db.query("SELECT * FROM quizzes");
-      res.json(quizzes.rows);
-    } catch (error) {
-      console.error(error);
-      res.status(500).send("Server error");
-    }
-  },
-};
-
-export default quizList;
-*/
-
-/*
-import quizzes from "../data/quizzes.json" assert { type: "json" };
-
-const quizList = {
-  getQuizzes(req, res) {
-    try {
-      res.json(quizzes);
-    } catch (error) {
-      console.error(error);
-      res.status(500).send("Server error");
-    }
-  },
-};
-
-export default quizList;
-
-import quizzes from "../data/quizzes.json" assert { type: "json" };
-import path from "path";
-
-const quizList = {
-  getQuizzes(req, res) {
-    try {
-      res.json(quizzes);
-    } catch (error) {
-      console.error(error);
-      res.status(500).send("Server error");
-    }
-  },
-};
-
-export default quizList;
-*/
-
 import db from "../database.js";
 
 export const quizList = (req, res) => {
+  // query to fetch all quizzes from the database
   const query = "SELECT * from quizzes";
-  console.log(req.body);
 
+  // execute the database query
   db.query(query, (error, results) => {
-    console.log(results);
     if (error) {
+      // if an error occurred during the query, log the error and send a 500 response
       console.error(error);
       res.status(500).send("Server error");
     } else {
+      // if the query was successful, send the quiz list as a JSON response
       res.json(results);
     }
   });
