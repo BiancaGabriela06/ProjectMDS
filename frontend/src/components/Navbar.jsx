@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import logo from "../images/icon.jpeg";
 import { Link, useMatch, useNavigate, useResolvedPath } from "react-router-dom";
 import "../css/Navbar.css";
 
@@ -16,7 +17,7 @@ const Navbar = () => {
     <nav className="nav">
       <Link to="/welcome" className="site-title">
         {" "}
-        ByteBoost
+        <img src={logo} className="App-logo" alt="logo" />
       </Link>
       <div className="options">
         <ul>
@@ -42,7 +43,7 @@ const Navbar = () => {
       <nav className="nav">
         <Link to="/home" className="site-title">
           {" "}
-          BoostByte
+          <img src={logo} className="App-logo" alt="logo" />
         </Link>
       </nav>
     </div>

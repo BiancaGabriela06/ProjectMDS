@@ -28,11 +28,24 @@ export const quiz = (req, res) => {
         res.status(500).send("Server error");
         return;
       }
-
+      
       const questions = questionsResults;
 
-      // return the quiz and questions as a JSON response
-      res.json({ quiz, questions });
+      const answerQuery = "Select answer from questions where quiz_id = ?";
+      db.query(answerQuery, [quizId], (answerError, answerResults) => {
+        if(answerError){
+          console.error(answerError);
+          res.status(500).send("Server error");
+        return;
+        }
+
+        const answers = answerResults;
+        // return the quiz and questions as a JSON response
+      res.json({ quiz, questions , answers});
+      })
+
+
+      
     });
   });
 };
