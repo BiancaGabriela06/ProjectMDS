@@ -1,4 +1,94 @@
 .welcome
 {
     text-align: center;
+  }
+  
+  .questionn{
+
+    width: max-content;
+    font-family: "Segoe UI", sans-serif;
+    padding: 25px 28px;
+    margin-left: 20vh;
+    font-size: 5vh;
+    margin-top: 5vh;
+    animation: popup 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    color: black;
+    text-decoration: double;
+    font: optional;
+    font-family: "Poppins", cursive, sans-serif;
+    font-size: 30px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none;
+    font-style: italic;
+    font-variant: small-caps;
+    text-transform: none;
+    text-align: center;
+
 }
+
+  .welcomepage h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .introduction {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .introduction h3 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .text {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .categorypages {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    margin-bottom: 10rem;
+  }
+  
+  .interviewsquestions, .tipstricks, .forum {
+    width: 30%;
+    margin-right: 20px;
+  }
+  
+  .text {
+    color: black;
+    font-size: 1/5rem;
+    line-height: 1.5;
+  }
+  
+  h3 {
+    margin: 1.5rem;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  h4 {
+    margin: 1.5rem;
+    color: rgb(11, 23, 90);
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+
+  
