@@ -1,5 +1,6 @@
 import "./App.css";
-import React, { useEffect, useState } from "react";
+import "./css/Nounderline.css";
+import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -23,17 +24,17 @@ import PythonGame from "./pages/ArticlePages/PythonGame";
 import PythonOOP from "./pages/ArticlePages/PythonOOP";
 import Quiz from "./pages/Quiz";
 import QuizList from "./pages/QuizList";
-import Question from "./components/Forum/Question"
+import Question from "./components/Forum/Question";
 
 function App() {
   const [data, setData] = useState("");
-
+  const user = JSON.parse(localStorage.getItem("currentUser"));
   return (
     <>
       <div className="App">{data}</div>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={user ? <Welcome /> : <Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/quiz/:id" element={<Quiz />} />
         <Route path="/quizList" element={<QuizList />} />

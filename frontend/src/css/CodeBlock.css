@@ -13,6 +13,10 @@ pre[class*="language-"] {
   tab-size: 2;
 }
 
+code[class*="language-"]>span {
+  color: #000;
+}
+
 .language-javascript {
   color: #abb2bf;
 }
@@ -48,3 +52,7 @@ pre[class*="language-"]::after {
   margin-right: 50px;
   border-radius: 10px;
 }
+
+/* span {
+  color: black;
+} */

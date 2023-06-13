@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import logo from "../images/icon.jpeg";
+import React from "react";
 import { Link, useMatch, useNavigate, useResolvedPath } from "react-router-dom";
 import "../css/Navbar.css";
 
@@ -16,8 +15,7 @@ const Navbar = () => {
   return auth ? (
     <nav className="nav">
       <Link to="/welcome" className="site-title">
-        {" "}
-        <img src={logo} className="App-logo" alt="logo" />
+        ByteBoost
       </Link>
       <div className="options">
         <ul>
@@ -33,7 +31,7 @@ const Navbar = () => {
         </ul>
         <ul>
           <button onClick={logout} className="btn">
-            Logout{" "}
+            Logout
           </button>
         </ul>
       </div>
@@ -42,8 +40,7 @@ const Navbar = () => {
     <div>
       <nav className="nav">
         <Link to="/home" className="site-title">
-          {" "}
-          <img src={logo} className="App-logo" alt="logo" />
+          ByteBoost
         </Link>
       </nav>
     </div>

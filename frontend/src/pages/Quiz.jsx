@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import "../css/QuizList.css";
+import "../css/Quiz.css";
 
 const Quiz = () => {
   // variables
-  const [questions, setQuestions] = useState([]); // Array to store quiz questions
-  const [currentQuestion, setCurrentQuestion] = useState(0); // Index of current question
-  const [selectedOption, setSelectedOption] = useState(""); // Selected option for the current question
-  const [timeLeft, setTimeLeft] = useState(60); // Countdown timer
-  const [correctAnswers, setCorrectAnswers] = useState(0); // Count of correct answers
+  const [questions, setQuestions] = useState([]); // array to store quiz questions
+  const [currentQuestion, setCurrentQuestion] = useState(0); // index of current question
+  const [selectedOption, setSelectedOption] = useState(""); // selected option for the current question
+  const [timeLeft, setTimeLeft] = useState(300); // countdown timer
+  const [correctAnswers, setCorrectAnswers] = useState(0); // count of correct answers
+  const [exerciseResults, setExerciseResults] = useState([]); // array to store exercise results
 
   // get quiz id
   const { id } = useParams();
@@ -36,7 +37,7 @@ const Quiz = () => {
       }, 1000);
     } else {
       clearInterval(interval);
-      handleQuizComplete(); // when time runs out, the quiz is completed
+      handleQuizCompletion(); // when time runs out, complete the quiz
     }
     return () => clearInterval(interval);
   }, [timeLeft]);
@@ -47,22 +48,21 @@ const Quiz = () => {
   };
 
   // handle quiz completion
-  const handleQuizComplete = () => {
-    const answer = questions[currentQuestion].answer;
-    if (selectedOption === answer) {
+  const handleQuizCompletion = () => {
+    if (!selectedOption) return;
+    const currentQuestionData = questions[currentQuestion];
+    const isAnswerCorrect =
+      currentQuestionData && selectedOption === currentQuestionData.answer;
+
+    setExerciseResults((prevExerciseResults) => [
+      ...prevExerciseResults,
+      { exerciseNumber: currentQuestion, isAnswerCorrect },
+    ]);
+
+    if (isAnswerCorrect) {
       setCorrectAnswers((prevCorrectAnswers) => prevCorrectAnswers + 1);
     }
-    setQuestions((prevQuestions) =>
-      prevQuestions.map((question, index) => {
-        if (index === currentQuestion) {
-          return {
-            ...question,
-            selectedOption: selectedOption,
-          };
-        }
-        return question;
-      })
-    );
+
     setCurrentQuestion((prevCurrentQuestion) => prevCurrentQuestion + 1);
     setSelectedOption("");
   };
@@ -72,42 +72,36 @@ const Quiz = () => {
     return <div>Loading...</div>;
   }
 
-  // results and correct answers
-  if (currentQuestion >= questions.length) {
+  // check if time has expired and if it did go to the final page
+  if (
+    (currentQuestion < questions.length && timeLeft === 0) ||
+    currentQuestion >= questions.length
+  ) {
     const totalQuestions = questions.length;
     return (
-      <div>
-        <h2>Quiz Complete</h2>
-        <p>
+      <div className="quiz-complete-container">
+        <h2 className="quiz-title">Quiz Complete</h2>
+        <p className="score">
           You got {correctAnswers} out of {totalQuestions} questions correct.
         </p>
-        {questions.map((question, index) => (
-          <div key={index}>
-            <p>
-              {index + 1}.{" "}
-              {question.answer === question.selectedOption ? (
-                <span className="correct">Correct</span>
-              ) : (
-                <span className="incorrect">Incorrect</span>
-              )}
-            </p>
-            <p>
-              Your answer:{" "}
-              <span
-                className={
-                  question.answer === question.selectedOption
-                    ? "correct-answer"
-                    : "incorrect-answer"
-                }
-              >
-                {question.selectedOption}
-              </span>
-              <br />
-              Correct answer:{" "}
-              <span className="correct-answer">{question.answer}</span>
-            </p>
-          </div>
-        ))}
+        <div className="question-list">
+          {questions.map((question, index) => (
+            <div key={index} className="question-item">
+              <p>
+                {index + 1}.{" "}
+                {exerciseResults.length > 0 &&
+                exerciseResults[index] &&
+                exerciseResults[index].isAnswerCorrect ? (
+                  <span className="correct">Correct! ✔️</span>
+                ) : (
+                  <span className="incorrect">
+                    Incorrect! Correct answer is "{question.answer}". ❌
+                  </span>
+                )}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
@@ -122,12 +116,12 @@ const Quiz = () => {
   ];
 
   return (
-    <div>
-      <h2>Question {currentQuestion + 1}</h2>
-      <p>{question.question}</p>
-      <div>
+    <div className="quiz-container">
+      <h2 className="question-number">Question {currentQuestion + 1}</h2>
+      <p className="question-text">{question.question}</p>
+      <div className="options-container">
         {options.map((option, index) => (
-          <div key={index}>
+          <div className="option" key={index}>
             <label>
               <input
                 type="radio"
@@ -140,8 +134,12 @@ const Quiz = () => {
           </div>
         ))}
       </div>
-      <p>Time Left: {timeLeft} seconds</p>
-      <button onClick={handleQuizComplete}>Submit</button>
+      <div className="timer-container">
+        <p className="timer">Time Left: {timeLeft} seconds</p>
+      </div>
+      <button className="submit-button" onClick={handleQuizCompletion}>
+        Submit
+      </button>
     </div>
   );
 };

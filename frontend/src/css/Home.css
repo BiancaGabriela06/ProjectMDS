@@ -1,46 +1,42 @@
-.background{
-    height: 100vh;
-    background-image: url('../images/back1.jpg');
-    background-size: cover;
+.background {
+  height: 100vh;
+  background-image: url("../images/back1.jpg");
+  background-size: cover;
 }
 
-.question{
-    width: max-content;
-    font-family: "Segoe UI", sans-serif;
-    padding: 25px 28px;
-    margin-left: 20vh;
-    font-size: 5vh;
-    margin-top: 5vh;
-    border-radius: 4px;
-    animation: popup 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-    color: black;
-    text-decoration: double;
-    font: optional;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    font-size: 30px;
-    letter-spacing: 2px;
-    word-spacing: 2px;
-    color: #000000;
-    font-weight: 700;
-    text-decoration: none;
-    font-style: italic;
-    font-variant: small-caps;
-    text-transform: none;
-
+.question {
+  width: max-content;
+  font-family: "Segoe UI", sans-serif;
+  padding: 20px;
+  margin: 24vh;
+  font-size: 25px;
+  margin-top: 5vh;
+  border-radius: 4px;
+  animation: popup 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  color: black;
+  text-decoration: double;
+  font: optional;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 30px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  color: #000000;
+  font-weight: 700;
+  text-decoration: none;
+  font-style: italic;
+  font-variant: small-caps;
+  text-transform: none;
 }
 
-.click{
-    font-weight: bold;
-    text-align: center;
-    text-shadow: 0.5cm blue;
-    
-    
+.click {
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0.5cm blue;
 }
 
-.h2{
-    color: black;
+.h2 {
+  color: black;
 }
-
 
 .background {
   background-color: #f2f2f2;
@@ -68,13 +64,13 @@
 }
 
 h4 {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 20px !important;
+  margin-bottom: 20px !important;
 }
 
 .click {
   background-color: #009688;
-  color: white;
+  color: white !important;
   padding: 10px 20px;
   border-radius: 4px;
   text-decoration: none;
@@ -83,5 +79,3 @@ h4 {
 .click:hover {
   background-color: #00796b;
 }
-
-

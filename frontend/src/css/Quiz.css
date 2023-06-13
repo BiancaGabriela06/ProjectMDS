@@ -1,0 +1,117 @@
+.quiz-complete-container {
+  text-align: center;
+}
+
+.quiz-title {
+  margin-bottom: 20px;
+  font-size: 32px !important;
+}
+
+.score {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.question-list {
+  text-align: left;
+  margin-left: 25vh;
+}
+
+.question-item > p {
+  margin-bottom: 10px;
+  font-size: 20px !important;
+}
+
+.correct {
+  font-size: 20px !important;
+  color: green;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.incorrect {
+  font-size: 20px !important;
+  color: rgb(227, 57, 57);
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.question-number {
+  font-size: 28px !important;
+  font-weight: bold;
+  margin: 10px;
+  text-align: center;
+}
+
+.question-text {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: black;
+}
+
+.options-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 20px;
+}
+
+.option {
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 7px;
+  cursor: pointer;
+  width: 100% !important;
+  transition: background-color 0.3s;
+}
+
+.option label {
+  display: block;
+}
+
+.option:hover {
+  background-color: #e0e0e0;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+.timer-container {
+  margin-top: 20px;
+}
+
+.timer {
+  font-size: 20px;
+  font-weight: bold;
+  color: #606360;
+}
+
+.submit-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}

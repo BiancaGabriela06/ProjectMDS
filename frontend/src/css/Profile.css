@@ -1,47 +1,54 @@
-.profile{
-    position: absolute;
-    display: flex;
-    text-align: justify;
-    box-shadow: 0 1px 20p 0 blanchedalmond;
-    margin-left: 15rem;
-    margin-top: 15rem;
-    margin-right: 15rem;
-    
+.our_profile {
+  width: 50%;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  margin: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 input {
-    
-    font-size: 2rem;
-    border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
-    background-color: #eee;
-  }
-
-.title{
-    width: 35%;
-    font-family: "Lucida Console", "Courier New", monospace;
-    font-size: 3rem;
-    font-weight: bolder;
-    margin-right: 15rem;
+  font-size: 2rem !important;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  background-color: #eee;
 }
 
-.informations{
-       width: 100%;
-}
-  
-.container{
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    color:black;
+.our_title {
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 3.5rem;
+  font-weight: bolder;
+  margin-bottom: 20px;
 }
 
-.edit{
-    font-size: 2rem;
-    margin-bottom: 8rem;
+.our_container {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
-.message{
-    color: red;
-    font-style: bold;
+.our_edit {
+  font-size: 3rem;
+  margin-top: 15px;
+}
+
+.our_message {
+  color: red;
+  font-style: bold;
+}
+
+label {
+  margin-right: 16px;
+  color: black;
 }

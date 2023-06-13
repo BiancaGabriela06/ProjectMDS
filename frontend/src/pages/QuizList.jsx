@@ -19,10 +19,15 @@ const QuizList = () => {
       });
   }, []);
 
+  // description for the page
+  const pageDescription =
+    "Welcome to the Quiz List page! Here, you can explore a variety of quizzes and test your knowledge on different subjects. Choose a quiz from the list below and start challenging yourself. Have fun and enjoy the learning experience!";
+
   return (
     <div>
       <div className="quiz-list">
-        <h2>List of Quizzes</h2>
+        <h2 className="quiz-heading">List of Quizzes</h2>
+        <div className="quiz-description">{pageDescription}</div>
       </div>
       <div className="quiz-box">
         {/* render each quiz card */}

@@ -1,91 +1,93 @@
-*,*::after, *::before{
-    margin: 1rem;
-    box-sizing: border-box;
+*,
+*::after,
+*::before {
+  margin: 1rem;
+  box-sizing: border-box;
 }
 
-html{
-    font-size: 62.5%;
+html {
+  font-size: 62.5%;
 }
 
-body{
-    font-size: 1.6rem;
+body {
+  font-size: 1.6rem;
 }
 
 .btn {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.5rem;
-    cursor: pointer;
-    background-color: transparent;
-    height: 50px;
-    width: 200px;
-    color: black;
-    font-size: 1.49rem;
+  text-transform: uppercase;
+  font-weight: bold !important;
+  font-size: 1.6rem !important;
+  cursor: pointer;
+  background-color: transparent;
+  height: 50px;
+  width: 200px;
+  color: black;
+  font-size: 1.49rem;
 }
 
-li{
-    list-style: none;
+li {
+  list-style: none;
 }
 
-a{
-    text-decoration: none;
-    color: rgb(6, 7, 45)
+a {
+  text-decoration: none;
+  color: rgb(6, 7, 45);
 }
-ul{
-    display: flex;
-    gap: 5rem;
-}
-
-.site-title{
-    font-size: 5rem;
-    color: white;
-    text-decoration: solid;
-    font-weight: 300;
+ul {
+  display: flex;
+  gap: 5rem;
 }
 
-.nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    box-sizing: border-box;
-    background: rgb(70, 181, 196);
+.site-title {
+  font-size: 5rem;
+  color: white !important;
+  text-decoration: solid;
+  font-weight: 300;
 }
 
-.options{
-    text-transform: uppercase;
-    font-weight: bold;
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+  background: rgb(70, 181, 196);
 }
 
-.connect{
-    text-transform: uppercase;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+.options {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fff !important;
 }
 
-
-@media screen and (max-witdh: 768px){
-    .nav__toggler{
-        display: block;
-    }
-    .nav__menu{
-        position: absolute;
-        top: 7vh;
-        right: 0;
-        width: 50%;
-        height: 93vh;
-        background: rgb(7, 50, 7);
-        flex-direction: column;
-        transform: translateX(100%);
-        transition: 0.5s ease-in;
-    }
+.connect {
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.nav li:active{
-    background-color: #555;
+@media screen and (max-witdh: 768px) {
+  .nav__toggler {
+    display: block;
+  }
+  .nav__menu {
+    position: absolute;
+    top: 7vh;
+    right: 0;
+    width: 50%;
+    height: 93vh;
+    background: rgb(7, 50, 7);
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: 0.5s ease-in;
+  }
 }
 
-.nav li:hover{
-    background-color: #777;
+.nav li:active {
+  background-color: #555;
+}
+
+.nav li:hover {
+  background-color: #777;
 }
