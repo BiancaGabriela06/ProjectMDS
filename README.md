@@ -1,3 +1,7 @@
+<img style="width:50%;" alt="BB"
+src="https://github.com/BiancaGabriela06/ProjectMDS/assets/94484148/44b8c697-79a4-4c81-b2ce-99484dee9400">
+
+
 # ProjectMDS - ByteBoost
 [Home](https://github.com/BiancaGabriela06/ProjectMDS/wiki) <br >
 [Cerințe](https://github.com/BiancaGabriela06/ProjectMDS/wiki/Cerințe) <br >
